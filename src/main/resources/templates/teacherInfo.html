@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/css/teacherManagement.css" />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.5.2/js/all.js"></script>
+    <script src="/js/teacherInfo.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+<div class="main_container">
+    <section id="content">
+        <!-- MAIN -->
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>Sơ yếu lí lịch</h1>
+                    <div class="runline">
+                        <p>Hôm nay là:
+                            <span id="currentDate"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-data">
+                <div class="order">
+                    <table>
+                        <tr>
+                            <div class="head"><h3 id="teacherNameHeading" >Thông tin cơ bản của giáo viên</h3></div>
+                        </tr>
+                        <tr>
+                            <th colspan="1" class="section-header">Giáo viên</th>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td><label>Giới tính:</label></td>
+                            <td><div id="genderTea" name="gender"></div></td>
+                        </tr>
+                        <tr>
+                            <td><label>Số điện thoại:</label></td>
+                            <td style="text-align: left;"><div id="phoneTea" name="phone">Không có</div></td>
+                        </tr>
+                        <tr>
+                            <td><label>Email:</label></td>
+                            <td style="text-align: left;"><div id="mailTea" name="mail">Không có</div></td>
+                        </tr>
+                        <tr>
+                            <td><label>Địa chỉ:</label></td>
+                            <td style="text-align: left;"><div id="addressTea" name="address"></div></td>
+                        </tr>
+                        <tr>
+                            <td><label>Khoá học:</label></td>
+                            <td style="text-align: left;"><div id="courseTea" name="course"></div></td>
+                        </tr>
+                        <tr>
+                            <td><label>Feedback:</label></td>
+                            <td><div style="text-align: left;" id="feedbackTea" name="feedback">Không có</div></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button id="turnBack">
+                                    <i class="bx bxs-calendar-check">
+                                        <i class="fa-solid fa-person-chalkboard" aria-hidden="false"></i>
+                                    </i> Quay lại
+                                </button>
+                            </td>
+                            <td></td>
+                            <td>
+                                <button id="scheduleButton" type="button">Lịch học</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
+<!--  -->
+<!--<script src="/js/teacherManagement.js" type="module"></script>-->
+<div id="deleteTeaModal" class="modal">
+    <div class="modal-content">
+        <p>Bạn có chắc chắn muốn xóa giáo viên <span id="teaName"></span>?</p>
+        <button id="confirmDelete">Xác nhận</button>
+        <button id="cancelDeleteButton">Huỷ</button>
+    </div>
+</div>
+</body>
+
+</html>

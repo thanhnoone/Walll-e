@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="/css/authVerifyOTP.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="title">Xác Nhận Email</div>
+    <form th:action="@{/verify-email}" method="post">
+        <div class="field">
+            <input type="text" required placeholder="Mã xác nhận" name="code">
+        </div>
+        <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="Xác Nhận">
+        </div>
+        <div th:if="${error}" class="error">
+            <p th:text="${error}"></p>
+        </div>
+    </form>
+</div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Xác nhận mã</title>
+    <link rel="stylesheet" href="/css/authVerifyOTP.css">
+</head>
+<body>
+<div class="wrapper">
+    <h1>Nhập mã xác nhận</h1>
+    <p>Chúng tôi đã gửi một mã xác nhận đến email của bạn. Vui lòng nhập mã đó vào ô dưới đây.</p>
+    <form th:action="@{/verify-code}" method="post">
+        <input type="text" required placeholder="Nhập mã xác nhận" name="verificationCode">
+        <input type="submit" class="button" value="Xác nhận" />
+    </form>
+    <div th:if="${error}" class="error">
+        <p th:text="${error}"></p>
+    </div>
+</div>
+</body>
+</html>

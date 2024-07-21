@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quản lý người dùng</title>
+    <script th:src="@{/js/adminFragments.js}" type="module"></script>
+    <th:block th:replace="adminFragments :: adminhead"></th:block>
+    <link rel="stylesheet" href="/css/adminAccountManagement.css">
+    <script src="/js/adminAccountManagement.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div th:replace="adminFragments :: adminheader"></div>
+    <div class="main_container">
+        <section id="content">
+            <main>
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Quản lý người dùng</h1>
+                    </div>
+                </div>
+                <div class="table-data">
+                    <div class="order">
+                        <div class="head">
+                            <h3>Danh sách người dùng</h3>
+<!--                            <div class="filter">-->
+<!--                                <select name="roles" id="role">-->
+<!--                                    <option value="all">Tất cả</option>-->
+<!--                                    <option value="parent">Phụ huynh</option>-->
+<!--                                    <option value="student">Học sinh</option>-->
+<!--                                    <option value="teacher">Giáo viên</option>-->
+<!--                                    <option value="manager">Quản lý</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+                        </div>
+                        <table id="user-account">
+                            <thead>
+                            <tr>
+                                <th><p>Tên tài khoản</p></th>
+                                <th><p>Vai trò</p></th>
+                                <th><p>Trạng thái</p></th>
+                                <th><p>Khóa/Mở khóa</p></th>
+                            </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                        <div class="pagination" style="display: flex; justify-content: space-between">
+                            <select id="pageSizeSelector">
+                                <option value="5">5/page</option>
+                                <option value="10">10/page</option>
+                                <option value="20">20/page</option>
+                            </select>
+                            <span id="paginationControls" class="pagination-controls" ></span>
+
+                            <div>
+                                <input type="number" id="goToPageInput" min="1" placeholder="Page">
+                                <button id="goToPageButton">Go</button>
+                            </div>
+
+                        </div>
+
+                        <div id="toastContainer" class="toast-container"></div>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </div>
+</div>
+</body>
+</html>
